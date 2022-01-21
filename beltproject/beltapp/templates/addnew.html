@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Add a trip</title>
+</head>
+<body>
+        <div id="top-nav">
+            <a href="/logout">Logout</a>
+            <a href="/travels">Back</a>
+            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 px-2">
+                    <h1>Add a trip</h1>
+                    {% for message in messages %}
+                    <p>- {{message}} -</p>
+                {% endfor %}
+    <form action="/create" method="POST">
+    {% csrf_token %}
+    <label for="destination">Destination</label>
+    <input type="text" name="destination" id="destination" class="form-control">
+    <label for="description">Description</label>
+    <input type="text" name="description" id="description" class="form-control">
+    <label for="date_from">Travel Date From</label>
+    <input type="date" name="date_from" id="date_from" class="form-control">
+    <label for="date_to">Travel Date To</label>
+    <input type="date" name="date_to" id="date_to" class="form-control">
+    <button>Submit</button>
+    </form>
+        </div>
+            </div>
+                </div>
+</div>
+</body>
+</html>
