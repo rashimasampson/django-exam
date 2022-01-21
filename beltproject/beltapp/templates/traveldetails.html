@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <div class="top-nav">
+            <a href="/travels" role="button" class="btn btn-sm btn-info ml-2 text-white">Back</a>
+            <a href="/logout" role="button"
+            class="btn btn-sm btn-info ml-2 text-white">Logout</a>       
+        </div>
+    <h3>Planned by:</h3>{{ trip.planner.first_name }} {{ trip.planner.last_name }}
+    <h3>Description:</h3>{{ trip.destination }} 
+    <h3>Travel Date From:</h3>{{ trip.start_date }}
+    <h3>Travel Date To:</h3>{{ trip.end_date }}
+    </div>
+    <h2>Other Users Joining the Trip</h2>
+    <ul>
+        {% for trip in user_trips.join %}
+        <li>{{ trip.planner.first_name}} {{ trip.planner.last_name}} </li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
